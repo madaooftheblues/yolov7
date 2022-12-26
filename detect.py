@@ -1,6 +1,7 @@
 import argparse
 import time
 from pathlib import Path
+from mytesseract import tesseract_detect
 
 import cv2
 import torch
@@ -126,8 +127,9 @@ def detect(save_img=False):
                             f.write(('%g ' * len(line)).rstrip() % line + '\n')
 
                     if save_img or view_img:  # Add bbox to image
-                        label = f'{names[int(cls)]} {conf:.2f}'
-                        plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=1)
+                        ocr = tesseract_detect(save_one_box(xyxy, imc, file=save_dir / 'crops' / names[int(cls)] / f'{p.stem}.jpg', BGR=True))
+                        label = f'{names[int(cls)]} {conf:.2f} {ocr}'
+                        plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=5)
 
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[int(cls)] / f'{p.stem}.jpg', BGR=True)

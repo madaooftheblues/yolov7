@@ -28,8 +28,8 @@ Install dependencies
 Run detect.py    
 `python detect.py --source <path> --weights runs/train/yolo_lpr_pakistan-custom/weights/best.pt --conf 0.25 --name results`      
 
-Where <path> is the path to the input.    
+Where `<path>` is the path to the input.    
 
 Results will be saved in `runs/detect/`         
 
-Add `--save-crop` flag if you want to save the bounded box      
+Add `--save-crop` flag if you want to save the bounded box.      
