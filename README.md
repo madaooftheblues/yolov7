@@ -1,10 +1,10 @@
-##License Plate Recognition System (LPR)
+# License Plate Recognition System (LPR)
 
-#How it works?
+## How it works?
 YoloV7 is used for license plate detection.
 Tesseract OCR is used for recognizing ntext on the number plate.
 
-#Installation
+## Installation
 Clone our repository
 `git clone https://github.com/madaooftheblues/yolov7-lpr`
 
@@ -24,7 +24,7 @@ On Linux/MacOS:
 Install dependencies
 `pip install -r requirements.txt`
 
-#Usage
+## Usage
 Run detect.py
 `python detect.py --source <image/video path> --weights runs/train/yolo_lpr_pakistan-custom/weights/best.pt --conf 0.25 --name results`
 
